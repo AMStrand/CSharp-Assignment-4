@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace cis237assignment4
 {
-    //Abstract class that implements the IDroid interface
-    abstract class Droid : IDroid
+    //Abstract class that implements the IDroid interface and the IComparable interface:
+    abstract class Droid : IDroid, IComparable<Droid>
     {
         //some protected variables for the class
         protected string material;
@@ -30,6 +30,8 @@ namespace cis237assignment4
             this.material = Material;
             this.model = Model;
             this.color = Color;
+
+            CalculateBaseCost();
         }
 
         //Virtual method that can be overridden in the derived classes if needed.
@@ -65,6 +67,19 @@ namespace cis237assignment4
             return "Material: " + this.material + Environment.NewLine +
                     "Model: " + this.model + Environment.NewLine +
                     "Color: " + this.color + Environment.NewLine;
+        }
+
+
+        // Public method to compare droids based on their total costs:
+        public virtual int CompareTo(Droid otherDroid)
+        {
+                // Error checking:
+            if (otherDroid == null)
+            {
+                return 1;
+            }
+                // Return < 0 if the total cost is less than the other droid, > 0 if not: 
+            return this.TotalCost.CompareTo(otherDroid.TotalCost);
         }
     }
 }

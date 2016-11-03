@@ -21,6 +21,8 @@ namespace cis237assignment4
             //Assign the values that the base constructor is not taking care of.
             this.hasTrashCompactor = HasTrashCompactor;
             this.hasVacuum = HasVacuum;
+
+            CalculateTotalCost();
         }
 
         //Override the CalculateCostOfOptions method.
@@ -50,6 +52,12 @@ namespace cis237assignment4
             return base.ToString() +
                 "Has Trash Compactor: " + this.hasTrashCompactor + Environment.NewLine +
                 "Has Vacuum: " + this.hasVacuum + Environment.NewLine;
+        }
+
+        // Public method to compare droids based on their total costs:
+        public override int CompareTo(Droid otherDroid)
+        {
+            return this.TotalCost.CompareTo(otherDroid.TotalCost);
         }
     }
 }

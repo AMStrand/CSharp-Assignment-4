@@ -24,6 +24,8 @@ namespace cis237assignment4
             //Assign the values for the constructor that are not handled by the base constructor
             this.hasFireExtinguisher = HasFireExtinquisher;
             this.numberOfShips = NumberOfShips;
+
+            CalculateTotalCost();
         }
 
         //Overridden method to calculate the cost of options. Uses the base class to do some of the calculations
@@ -62,6 +64,12 @@ namespace cis237assignment4
             return base.ToString() +
                 "Has Fire Extinguisher: " + this.hasFireExtinguisher + Environment.NewLine +
                 "Number Of Ships: " + this.numberOfShips + Environment.NewLine;
+        }
+
+        // Public method to compare droids based on their total costs:
+        public override int CompareTo(Droid otherDroid)
+        {
+            return this.TotalCost.CompareTo(otherDroid.TotalCost);
         }
     }
 }

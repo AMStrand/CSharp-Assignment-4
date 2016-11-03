@@ -18,6 +18,8 @@ namespace cis237assignment4
         public ProtocolDroid(string Material, string Model, string Color, int NumberOfLanguages) : base(Material, Model, Color)
         {
             this.numberOfLanguages = NumberOfLanguages;
+
+            CalculateTotalCost();
         }
 
         //Overriden abstract method from the droid class.
@@ -35,6 +37,12 @@ namespace cis237assignment4
         {
             return base.ToString() +
                 "Number Of Languages: " + this.numberOfLanguages + Environment.NewLine;
+        }
+
+        // Public method to compare droids based on their total costs:
+        public override int CompareTo(Droid otherDroid)
+        {
+            return this.TotalCost.CompareTo(otherDroid.TotalCost);
         }
     }
 }

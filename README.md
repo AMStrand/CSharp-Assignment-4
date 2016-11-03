@@ -3,7 +3,7 @@
 
 ## Author
 
-
+Alyssa Strand
 
 ## Description
 
@@ -85,11 +85,11 @@ Be sure to think about what the time complexity for the bucket sort will be. Thi
 
 ## Outside Resources Used
 
-
+CIS 237 in class 4
 
 ## Known Problems, Issues, And/Or Errors in the Program
 
-
+None
 
 ## Assignment 3 Description for reference
 

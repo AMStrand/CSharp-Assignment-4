@@ -24,6 +24,8 @@ namespace cis237assignment4
             this.hasToolbox = HasToolbox;
             this.hasComputerConnection = HasComputerConnection;
             this.hasArm = HasArm;
+
+            CalculateTotalCost();
         }
 
         //virtual method to calculate the cost of the options. This method can be overridden in child classes
@@ -67,6 +69,12 @@ namespace cis237assignment4
                 "Has Tool Box: " + this.hasToolbox + Environment.NewLine +
                 "Has Computer Connection: " + this.hasComputerConnection + Environment.NewLine +
                 "Has Arm: " + this.hasArm + Environment.NewLine;
+        }
+
+        // Public method to compare droids based on their total costs:
+        public override int CompareTo(Droid otherDroid)
+        {
+            return this.TotalCost.CompareTo(otherDroid.TotalCost);
         }
     }
 }
